@@ -1,0 +1,40 @@
+CINEMABOOK — MINI PROJECT REPORT
+Simple Application with MySQL Database
+
+1. Project Title
+CinemaBook — Movie Ticket Booking Website
+
+2. Objective
+Create a web application for selecting movies, dates, showtimes and seats, calculating the ticket total, and storing bookings in MySQL.
+
+3. Technologies
+HTML, CSS, JavaScript; Java Servlets (Jakarta); Apache Tomcat 10.1; MySQL; Maven; VS Code.
+
+4. Database
+Database: movie_booking_db. Table: movie_bookings. Primary key: booking_id (auto-increment). Fields: customer_name, customer_email, movie_name, show_date, show_time, seat_numbers, total_amount, created_at. See database/database.sql for the schema.
+
+5. Features
+- Five movie cards and poster images.
+- Movie, date, showtime and seat selection.
+- Ticket price and total calculation.
+- INSERT booking; SELECT saved bookings; UPDATE customer name; DELETE booking.
+- Basic validation for required name/date and invalid values.
+
+6. Test cases — record actual results after testing
+Test 1: Submit valid booking; expect booking ID and new MySQL row.
+Test 2: Refresh saved bookings; expect saved record to appear.
+Test 3: Edit customer name; expect changed value in UI and database.
+Test 4: Delete booking; expect row removed from UI and database.
+Test 5: Submit missing name/date; expect validation and no insertion.
+
+7. Conclusion
+CinemaBook demonstrates a basic web interface connected to MySQL using Java Servlets, with INSERT, SELECT, UPDATE and DELETE operations. No real payment is processed.
+
+8. Screenshots to attach for submission
+1. Website with movie cards and booking form.
+2. Booking confirmation and Saved Bookings list.
+3. movie_bookings table in MySQL Workbench.
+4. Updated booking name.
+5. Record removed after delete.
+
+Do not state that tests passed until you have run them. Add your own screenshots after testing.
