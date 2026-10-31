@@ -1,0 +1,20 @@
+DROP DATABASE IF EXISTS UniversityDB;
+CREATE DATABASE UniversityDB;
+USE UniversityDB;
+
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    EnrollmentDate DATE
+);
+
+ALTER TABLE Students ADD COLUMN Email VARCHAR(100);
+
+ALTER TABLE Students MODIFY COLUMN LastName VARCHAR(100) NOT NULL;
+
+ALTER TABLE Students DROP COLUMN EnrollmentDate;
+
+DROP TABLE Students;
+
+DROP DATABASE UniversityDB;
