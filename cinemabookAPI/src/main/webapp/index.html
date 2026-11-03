@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook - Movie Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">CINE<span>BOOK</span></div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#booking">Book Tickets</a>
+        <a href="#mybookings">My Bookings</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p>WELCOME TO CINEBOOK</p>
+        <h1>Movies are better<br>on the <span>big screen.</span></h1>
+        <p>Discover your favourite movies and book your tickets.</p>
+        <a href="#movies" class="btn">Explore Movies</a>
+    </div>
+</section>
+
+<section class="movies" id="movies">
+    <p class="subtitle">NOW SHOWING</p>
+    <h2>Popular Movies</h2>
+    <div class="movie-container" id="movieContainer"></div>
+</section>
+
+<section class="booking" id="booking">
+    <p class="subtitle">RESERVE YOUR TICKETS</p>
+    <h2>Book Your Movie</h2>
+
+    <form id="booking-form">
+
+        <label>Customer Name</label>
+        <input type="text" id="customerName" required>
+
+        <label>Email</label>
+        <input type="email" id="customerEmail" required>
+
+        <label>Phone Number</label>
+        <input type="tel" id="customerPhone"
+               maxlength="15" required>
+
+        <label>Select Movie</label>
+        <select id="movieName" required>
+            <option value="">Choose Movie</option>
+        </select>
+
+        <label>Select Date</label>
+        <div id="dateStrip" class="chip-strip">
+            <p class="chip-hint">Choose a movie first</p>
+        </div>
+
+        <label>Select Showtime</label>
+        <div id="timeStrip" class="chip-strip">
+            <p class="chip-hint">Choose a date first</p>
+        </div>
+
+        <input type="hidden" id="showId">
+
+        <h3>Select Your Seats</h3>
+        <p class="screen">SCREEN</p>
+
+        <div id="seatContainer" class="seat-container"></div>
+
+        <p>
+            <span>🟩 Available</span>
+            <span>🟥 Selected</span>
+            <span>⬛ Booked</span>
+        </p>
+
+        <div class="total">
+            <span>Selected Seats</span>
+            <strong id="selectedSeats">None</strong>
+        </div>
+
+        <div class="total">
+            <span>Total Price</span>
+            <strong id="totalPrice">₹0</strong>
+        </div>
+
+        <button type="submit" id="confirmButton">
+            Confirm Booking
+        </button>
+
+        <p id="message"></p>
+    </form>
+</section>
+
+<section class="my-bookings" id="mybookings">
+    <p class="subtitle">YOUR RESERVATIONS</p>
+    <h2>My Bookings</h2>
+    <div id="bookingList"></div>
+</section>
+
+<footer>
+    <h3>CINEBOOK</h3>
+    <p>Movie Ticket Booking System</p>
+    <p>© 2026 CineBook</p>
+</footer>
+
+<!-- Libraries for the QR code and the PDF ticket (loaded from the internet) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>

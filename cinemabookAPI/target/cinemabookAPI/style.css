@@ -1,0 +1,1195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #101014;
+    color: white;
+}
+
+/* ===== Header ===== */
+header {
+    height: 75px;
+    background: #19191f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: #ff354f;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #ff354f;
+}
+
+/* ===== Hero ===== */
+.hero {
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+    background:
+        linear-gradient(90deg, #101014 15%, #101014bb 65%, #10101455),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1600")
+        center/cover;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-content p {
+    color: #bbb;
+    margin: 18px 0;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.2;
+}
+
+.hero h1 span {
+    color: #ff354f;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    background: #ff354f;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #d91d37;
+}
+
+/* ===== Sections ===== */
+.movies, .booking, .my-bookings {
+    padding: 65px 8%;
+}
+
+.subtitle {
+    color: #ff354f;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* ===== Movie cards ===== */
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.movie-card {
+    background: #1d1d25;
+    border: 1px solid #34343e;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.movie-card h3 {
+    padding: 15px 15px 5px;
+    font-size: 20px;
+}
+
+.movie-card p {
+    padding: 5px 15px;
+    color: #aaa;
+}
+
+.movie-card button,
+.booking button {
+    background: #ff354f;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.movie-card button:hover,
+.booking form button:hover {
+    background: #d91d37;
+}
+
+/* ===== Booking form ===== */
+.booking {
+    background: #19191f;
+}
+
+.booking form {
+    max-width: 550px;
+    padding: 25px;
+    background: #24242c;
+    border-radius: 10px;
+    border: 1px solid #383842;
+}
+
+.booking label {
+    display: block;
+    margin: 15px 0 7px;
+}
+
+.booking input,
+.booking select {
+    width: 100%;
+    padding: 12px;
+    background: #111116;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+.booking h3 {
+    margin-top: 25px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    margin-top: 15px;
+    border-top: 1px solid #444;
+}
+
+.total strong {
+    color: #ff354f;
+    font-size: 23px;
+}
+
+.booking form button {
+    width: calc(100% - 30px);
+}
+
+.booking form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#message {
+    padding: 10px;
+    overflow-wrap: anywhere;
+}
+
+.msg-ok {
+    color: #3ddc84;
+}
+
+.msg-err {
+    color: #ff6b6b;
+}
+
+/* ===== Seats ===== */
+.screen {
+    text-align: center;
+    margin: 12px 0 18px;
+    padding: 8px;
+    letter-spacing: 6px;
+    font-size: 12px;
+    color: #aaa;
+    border-top: 4px solid #ff354f;
+    background: linear-gradient(#ff354f22, transparent);
+}
+
+.seat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.seat-row {
+    display: grid;
+    grid-template-columns: 22px repeat(10, 1fr);
+    gap: 5px;
+    align-items: center;
+}
+
+.row-label {
+    color: #888;
+    font-size: 12px;
+    text-align: center;
+}
+
+.booking .seat-container button.seat {
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    border-radius: 5px 5px 2px 2px;
+    background: #1f9d55;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.booking .seat-container button.seat:hover:not(:disabled) {
+    background: #27c26a;
+}
+
+.booking .seat-container button.seat.selected {
+    background: #ff354f;
+}
+
+.booking .seat-container button.seat.booked {
+    background: #3a3a44;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.seat-hint {
+    color: #aaa;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.booking form p span {
+    margin-right: 14px;
+    font-size: 14px;
+}
+
+/* ===== Digital ticket ===== */
+#ticket {
+    max-width: 550px;
+    margin-top: 25px;
+    padding: 22px;
+    background: #1d1d25;
+    border: 2px dashed #ff354f;
+    border-radius: 12px;
+}
+
+#ticket h3 {
+    color: #ff354f;
+    margin: 0 0 12px;
+}
+
+.ticket-body {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ticket-details {
+    flex: 1 1 240px;
+    min-width: 0;
+}
+
+.ticket-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+}
+
+.ticket-row span {
+    color: #aaa;
+}
+
+.ticket-row strong {
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.ticket-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    font-size: 18px;
+}
+
+.ticket-total strong {
+    color: #ff354f;
+    font-size: 24px;
+}
+
+.ticket-qr {
+    flex: 0 0 auto;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.ticket-qr img {
+    display: block;
+    width: 160px;
+    height: 160px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 0 auto 8px;
+}
+
+.ticket-qr small {
+    color: #aaa;
+}
+
+.ticket-actions {
+    margin-top: 18px;
+}
+
+#ticket .ticket-actions button,
+.booking-item .dl-btn {
+    background: #ff354f;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    margin: 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#ticket .ticket-actions button:hover,
+.booking-item .dl-btn:hover {
+    background: #d91d37;
+}
+
+/* ===== My Bookings ===== */
+.booking-item {
+    background: #22222a;
+    padding: 20px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #34343e;
+}
+
+.booking-item p {
+    margin: 6px 0;
+}
+
+.booking-item .dl-btn {
+    margin-top: 10px;
+}
+
+.bi-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.bi-status {
+    background: #1f9d55;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.bi-meta {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #19191f;
+    text-align: center;
+    padding: 30px;
+    color: #aaa;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 700px) {
+    header {
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .movie-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .movies, .booking, .my-bookings {
+        padding: 40px 5%;
+    }
+
+    .booking form {
+        padding: 18px;
+    }
+
+    .seat-row {
+        gap: 3px;
+    }
+}
+
+
+/* =====================================================
+   ANIMATIONS + POP-UPS  (added later)
+   Colours are the same dark theme with the red accent.
+   ===================================================== */
+
+section { scroll-margin-top: 85px; }
+
+/* ----- scroll progress bar ----- */
+#scrollBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    z-index: 300;
+    background: linear-gradient(90deg, #ff354f, #ff9a5c);
+    box-shadow: 0 0 10px #ff354f;
+}
+
+/* ----- header ----- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: box-shadow .3s, background .3s, height .3s;
+}
+
+header.scrolled {
+    background: #19191fee;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 24px #000a;
+    height: 64px;
+}
+
+nav a {
+    position: relative;
+    transition: color .25s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 2px;
+    width: 0;
+    background: #ff354f;
+    transition: width .3s;
+}
+
+nav a:hover::after { width: 100%; }
+
+/* ----- hero ----- */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    right: 8%;
+    top: 15%;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff354f55, transparent 70%);
+    filter: blur(12px);
+    animation: floaty 7s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content > * {
+    opacity: 0;
+    animation: fadeUp .8s ease forwards;
+}
+
+.hero-content > *:nth-child(1) { animation-delay: .1s; }
+.hero-content > *:nth-child(2) { animation-delay: .3s; }
+.hero-content > *:nth-child(3) { animation-delay: .5s; }
+
+.hero h1 span {
+    animation: textGlow 2.5s ease-in-out infinite alternate;
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s, background .2s, box-shadow .2s;
+}
+
+/* the hero button: fade up first, then pulse forever */
+.hero-content > .btn {
+    animation: fadeUp .8s ease .7s forwards,
+               pulseRing 2.2s ease 1.6s infinite;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px #ff354f55;
+}
+
+.btn:active { transform: scale(.96); }
+
+/* ----- reveal on scroll ----- */
+.reveal { opacity: 0; }
+
+.reveal.in-view {
+    animation: fadeUp .7s ease both;
+    animation-delay: var(--d, 0ms);
+}
+
+/* ----- movie cards ----- */
+.movie-card {
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff354f;
+    box-shadow: 0 16px 34px #ff354f33;
+}
+
+.poster-wrap {
+    position: relative;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.poster-wrap img {
+    display: block;
+    transition: transform .6s ease;
+}
+
+.movie-card:hover .poster-wrap img { transform: scale(1.08); }
+
+.poster-hint {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    transform: translate(-50%, 20px);
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #000c;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+    pointer-events: none;
+}
+
+.poster-wrap:hover .poster-hint {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.skeleton-card {
+    height: 470px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #1d1d25 25%, #2a2a35 37%, #1d1d25 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.4s ease infinite;
+}
+
+/* ----- buttons (ripple + press) ----- */
+.movie-card button,
+#confirmButton,
+.modal-btn,
+.dl-btn,
+#pdfBtn {
+    position: relative;
+    overflow: hidden;
+    transition: transform .15s, background .2s, box-shadow .2s;
+}
+
+.movie-card button:hover,
+#confirmButton:hover:not(:disabled),
+.modal-btn:hover:not(:disabled) {
+    box-shadow: 0 8px 18px #ff354f44;
+    transform: translateY(-2px);
+}
+
+.movie-card button:active,
+#confirmButton:active:not(:disabled),
+.modal-btn:active:not(:disabled) { transform: scale(.97); }
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: #ffffff55;
+    transform: scale(0);
+    animation: ripple .6s ease-out forwards;
+    pointer-events: none;
+}
+
+/* ----- form ----- */
+.booking input,
+.booking select {
+    transition: border-color .25s, box-shadow .25s;
+}
+
+.booking input:focus,
+.booking select:focus {
+    outline: none;
+    border-color: #ff354f;
+    box-shadow: 0 0 0 3px #ff354f33;
+}
+
+.shake { animation: shake .45s; }
+
+/* ----- seats ----- */
+.booking .seat-container button.seat {
+    transition: transform .15s, background .2s, box-shadow .2s;
+}
+
+.booking .seat-container button.seat:hover:not(:disabled) {
+    transform: translateY(-3px) scale(1.12);
+}
+
+.booking .seat-container button.seat.selected {
+    box-shadow: 0 0 12px #ff354faa;
+}
+
+.booking .seat-container button.seat.enter {
+    animation: seatIn .4s ease both;
+}
+
+.booking .seat-container button.seat.pop {
+    animation: seatPop .3s ease;
+}
+
+/* ----- ticket ----- */
+#ticket.ticket-in { animation: ticketIn .6s cubic-bezier(.2, 1.1, .3, 1); }
+
+/* ----- my bookings ----- */
+.booking-item {
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+
+.booking-item:hover {
+    transform: translateX(6px);
+    border-color: #ff354f;
+    box-shadow: -4px 0 0 #ff354f;
+}
+
+/* ----- small message pop-ups (toast) ----- */
+#toastRoot {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 400;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.toast {
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: #24242c;
+    border-left: 4px solid #ff354f;
+    box-shadow: 0 10px 26px #000a;
+    animation: toastIn .35s cubic-bezier(.2, 1.2, .3, 1);
+    transition: opacity .3s, transform .3s;
+}
+
+.toast.ok { border-left-color: #3ddc84; }
+.toast.err { border-left-color: #ff6b6b; }
+.toast.out { opacity: 0; transform: translateX(30px); }
+
+/* ----- pop-up windows ----- */
+body.modal-open { overflow: hidden; }
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(5, 5, 8, .72);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: opacity .25s;
+}
+
+.modal-overlay.show { opacity: 1; }
+.modal-overlay.hide { opacity: 0; }
+
+.modal-box {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: 24px;
+    text-align: center;
+    background: #1d1d25;
+    border: 1px solid #3a3a46;
+    border-radius: 16px;
+    box-shadow: 0 25px 60px #000a;
+    opacity: 0;
+    transform: translateY(40px) scale(.88);
+    transition: transform .4s cubic-bezier(.2, 1.2, .3, 1), opacity .25s;
+}
+
+.modal-overlay.show .modal-box { opacity: 1; transform: none; }
+
+.modal-overlay.hide .modal-box {
+    opacity: 0;
+    transform: translateY(20px) scale(.95);
+}
+
+.modal-x {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: #000a;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+}
+
+.modal-x:hover { background: #ff354f; transform: rotate(90deg); }
+
+.modal-btn {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin-top: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #ff354f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-btn:hover:not(:disabled) { background: #d91d37; }
+
+.modal-btn:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.modal-btn.loading::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 10px;
+    vertical-align: -2px;
+    border: 2px solid #fff6;
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+}
+
+.modal-link {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.modal-link:hover { color: #ff354f; }
+
+/* movie details pop-up */
+.movie-modal { padding: 0; max-width: 380px; overflow: hidden; }
+
+.modal-poster {
+    display: block;
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+}
+
+.modal-info { padding: 18px 22px 22px; }
+.modal-info h3 { font-size: 22px; margin-bottom: 6px; }
+.modal-info p { color: #aaa; margin: 4px 0; }
+.modal-price { color: #ff354f !important; font-weight: bold; font-size: 18px; }
+
+/* payment pop-up */
+.pay-head {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff354f;
+    letter-spacing: 1px;
+}
+
+.pay-sub { color: #aaa; font-size: 14px; margin-top: 4px; }
+
+.pay-amount {
+    margin: 10px 0 14px;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.pay-qr-wrap {
+    position: relative;
+    display: inline-block;
+    padding: 12px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 0 3px #ff354f55;
+}
+
+.pay-qr { color: #333; line-height: 0; }
+.pay-qr img { display: block; width: 190px; height: 190px; }
+.pay-qr small { display: block; width: 190px; line-height: 1.3; word-break: break-all; }
+
+.scan-line {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 10px;
+    height: 2px;
+    background: #ff354f;
+    box-shadow: 0 0 12px 2px #ff354f;
+    animation: scan 2.2s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.pay-upi { margin-top: 12px; color: #ccc; font-size: 14px; }
+
+.link-btn {
+    background: none;
+    border: 1px solid #ff354f;
+    color: #ff354f;
+    padding: 2px 10px;
+    margin-left: 6px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.link-btn:hover { background: #ff354f; color: #fff; }
+
+.pay-open {
+    display: none;
+    margin-top: 10px;
+    color: #ff354f;
+    font-weight: bold;
+}
+
+@media (hover: none) {
+    .pay-open { display: block; }
+}
+
+.pay-timer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 16px 0 6px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.pay-bar {
+    flex: 1;
+    height: 6px;
+    background: #333;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.pay-bar i {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #3ddc84;
+    transition: width 1s linear, background .3s;
+}
+
+.pay-bar.warn i { background: #ff354f; }
+
+.pay-modal label {
+    display: block;
+    margin: 12px 0 8px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.pay-modal input {
+    width: 100%;
+    padding: 12px;
+    background: #111116;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-align: center;
+    transition: border-color .25s, box-shadow .25s;
+}
+
+.pay-modal input:focus {
+    outline: none;
+    border-color: #ff354f;
+    box-shadow: 0 0 0 3px #ff354f33;
+}
+
+.pay-err {
+    min-height: 20px;
+    margin-top: 8px;
+    color: #ff6b6b;
+    font-size: 14px;
+}
+
+/* success pop-up */
+.success-wrap h3 { font-size: 24px; margin-bottom: 6px; }
+.success-wrap p { color: #ccc; margin: 4px 0; }
+.success-wrap .sub { color: #999; font-size: 14px; }
+
+.check {
+    display: block;
+    width: 92px;
+    height: 92px;
+    margin: 0 auto 12px;
+    animation: popIn .5s cubic-bezier(.2, 1.4, .3, 1);
+}
+
+.check-circle {
+    stroke: #3ddc84;
+    stroke-width: 3;
+    stroke-dasharray: 152;
+    stroke-dashoffset: 152;
+    animation: draw .6s ease forwards;
+}
+
+.check-mark {
+    stroke: #3ddc84;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 40;
+    stroke-dashoffset: 40;
+    animation: draw .4s .5s ease forwards;
+}
+
+.confetti-piece {
+    position: fixed;
+    top: -14px;
+    z-index: 210;
+    border-radius: 2px;
+    opacity: 0;
+    pointer-events: none;
+    animation: confettiFall var(--dur, 3s) linear var(--delay, 0s) forwards;
+}
+
+/* ----- keyframes ----- */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floaty {
+    0%, 100% { transform: translate(0, 0); }
+    50%      { transform: translate(-30px, 30px); }
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 0 #ff354f00; }
+    to   { text-shadow: 0 0 24px #ff354f99; }
+}
+
+@keyframes pulseRing {
+    0%   { box-shadow: 0 0 0 0 #ff354f88; }
+    70%  { box-shadow: 0 0 0 14px #ff354f00; }
+    100% { box-shadow: 0 0 0 0 #ff354f00; }
+}
+
+@keyframes shimmer {
+    from { background-position: 100% 0; }
+    to   { background-position: 0 0; }
+}
+
+@keyframes ripple {
+    to { transform: scale(2.6); opacity: 0; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-7px); }
+    40%, 80% { transform: translateX(7px); }
+}
+
+@keyframes seatIn {
+    from { opacity: 0; transform: scale(.3) translateY(10px); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes seatPop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.35); }
+    100% { transform: scale(1); }
+}
+
+@keyframes ticketIn {
+    from { opacity: 0; transform: translateY(40px) scale(.94); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes toastIn {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes scan {
+    from { top: 10px; }
+    to   { top: calc(100% - 12px); }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(.3); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+@keyframes confettiFall {
+    0%   { opacity: 1; transform: translateY(0) rotate(0); }
+    100% { opacity: 1; transform: translateY(110vh) rotate(var(--rot, 540deg)); }
+}
+
+/* phones: header is not sticky (it is too tall) */
+@media (max-width: 700px) {
+    header { position: static; }
+    .hero::before { width: 220px; height: 220px; }
+    #toastRoot { left: 12px; right: 12px; align-items: stretch; }
+}
+
+/* people who turn animations off in their phone/PC settings */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+/* ===== Date + time chips (same dark / red theme) ===== */
+.chip-strip {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.chip-hint {
+    color: #888;
+    font-size: 14px;
+    padding: 6px 0;
+}
+
+.booking form .chip-strip button.chip {
+    width: auto;
+    margin: 0;
+    padding: 10px 14px;
+    background: #111116;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    transition: background .2s, border-color .2s, transform .15s, box-shadow .2s;
+}
+
+.booking form .chip-strip button.chip small {
+    font-size: 11px;
+    font-weight: normal;
+    color: #aaa;
+}
+
+.booking form .chip-strip button.date-chip {
+    min-width: 58px;
+}
+
+.booking form .chip-strip button.date-chip b {
+    font-size: 18px;
+}
+
+.booking form .chip-strip button.chip:hover {
+    background: #111116;
+    border-color: #ff354f;
+    transform: translateY(-2px);
+}
+
+.booking form .chip-strip button.chip.active {
+    background: #ff354f;
+    border-color: #ff354f;
+    box-shadow: 0 0 0 3px #ff354f33;
+}
+
+.booking form .chip-strip button.chip.active small {
+    color: #ffe3e7;
+}
